@@ -8,6 +8,6 @@
 - name: Tag and push to docker hub
   docker_image:
     name: devops:latest
-    repository: nourmallek/devops
+    repository: nourmallek1/devops
     push: yes
     source: local
