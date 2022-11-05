@@ -2,4 +2,4 @@
 # tasks file for build
 #buidproject
 - name: build app
-  shell: ng build --configuration production
+  shell: ng build
