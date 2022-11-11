@@ -8,7 +8,6 @@ scrape_configs:
        - pushgateway:9091
        - cadvisor:8080
  - job_name: Docker Job
-   metrics_path: /metrics
    static_configs:
      - targets: ['192.168.2.3:9999']   
  - job_name: myapp
