@@ -5,9 +5,5 @@
     email: "nour.mallek@esprit.tn"
     username: "nourmallek1"
     password: "dckr_pat_fzZC4kGqY6E5sxmlr0uAgt_zlPM"
-- name: Tag and push to docker hub
-  docker_image:
-    name: devops
-    repository: nourmallek1/devops
-    push: yes
-    source: local
+- name: Push the Docker image into the repo
+  shell: docker push nourmallek1/devops:latest
