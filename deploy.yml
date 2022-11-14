@@ -1,17 +1,30 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: devops
+  name: myappcontainer
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: devops
+      app: myappcontainer
   template:
     metadata:
       labels:
-        app: devops
+        app: myappcontainer
     spec:
       containers:
-        - name: myapp_container
+        - name: myappcontainer
           image: devops:latest
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: myappcontainer
+  namespace: default
+spec:
+  ports:
+    - name: http
+      port: 4200
+  type: LoadBalancer    
+  selector:
+    apps: myappcontainer
